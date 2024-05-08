@@ -14,7 +14,8 @@ import Sub3 from '@/components/Sub3'
 // ]
 
 const router = createRouter({
-    history : createWebHashHistory(),
+    mode: 'history',
+    base: '/kmk-vue/', // your repository name
     routes : [
         { path : "/", name : "MainPage", component : Main },
         { path : "/sub1", name : "SubPage1", component : Sub1 },
