@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 컴포넌트
 import Main from '@/components/Main'
@@ -14,8 +14,8 @@ import Sub3 from '@/components/Sub3'
 // ]
 
 const router = createRouter({
-    mode: 'history',
-    history: createWebHistory('/kmk-vue/'),
+    history : createWebHashHistory(),
+    base: '/kmk-vue/',
     routes : [
         { path : "/", name : "MainPage", component : Main },
         { path : "/sub1", name : "SubPage1", component : Sub1 },
