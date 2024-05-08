@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import '@/assets/scss/base.scss'
+import './assets/scss/base.scss'
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './layout/Header.vue'
 
