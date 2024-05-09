@@ -38,7 +38,6 @@ export default {
   #tabButton{
     ul{
       display: flex;
-      justify-content: center;
       gap:5px;
       li{
         &.on{

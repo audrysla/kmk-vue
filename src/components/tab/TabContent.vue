@@ -30,7 +30,6 @@ export default {
 
 <style lang="scss">
   #tabContent{
-    text-align:center;
     ul{
       margin:0;list-style: none;
       padding:0;

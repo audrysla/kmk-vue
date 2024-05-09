@@ -6,8 +6,8 @@
         <li :class="{ active: $route.path === '/sub1' }"><router-link to="/sub1">Sub1</router-link></li>
         <li :class="{ active: $route.path === '/sub2' }"><router-link to="/sub2">Sub2</router-link></li>
         <li :class="{ active: $route.path === '/sub3' }"><router-link to="/sub3">Sub3</router-link></li>
-        <li><router-link to="/sub4">Sub4</router-link></li>
-        <li><router-link to="/sub5">Sub5</router-link></li> 
+        <li :class="{ active: $route.path === '/sub4' }"><router-link to="/sub4">Sub4</router-link></li>
+        <li :class="{ active: $route.path === '/sub5' }"><router-link to="/sub5">Sub5</router-link></li> 
       </ul>
       <div class="util">
         <a href="#">로그인</a>
