@@ -45,9 +45,7 @@ export default {
     color:#fff;
     h1{
       font-size:18px;
-      a{
-        color:inherit;
-      }
+      a{color:inherit;}
     }
     .gnb{
       display:flex;
@@ -74,7 +72,6 @@ export default {
       gap:10px;
       a{
         font-size:12px;
-        color:inherit;
       }
     }
   }

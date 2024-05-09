@@ -1,20 +1,19 @@
 <template>
   <Header />
-  <!-- <h2>kmk-vue 깃 연동</h2>
-  <img alt="Vue logo" src="./assets/logo.png"> -->
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <router-view />
+  <Footer />
 </template>
 
 <script>
 import './assets/scss/base.scss'
-// import HelloWorld from './components/HelloWorld.vue'
 import Header from './layout/Header.vue'
+import Footer from './layout/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>
