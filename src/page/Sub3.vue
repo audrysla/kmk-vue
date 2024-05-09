@@ -1,8 +1,10 @@
 <template>
   <div id="sub3">
-    <TabButton @childMethod="tabClick"/>    
-    <h2>{{ tabName }}</h2>
-    <TabContent :tabData="testData[tabName]" />
+    <div class="tabContent">
+      <TabButton @childMethod="tabClick"/>    
+      <h3>{{ tabName }}</h3>
+      <TabContent :tabData="testData[tabName]" />
+    </div>
   </div>
 </template>
 
@@ -33,7 +35,7 @@ export default {
 
 <style lang="scss">
   #sub3{
-    h2{
+    h3{
       margin:30px 0 15px;
     }
   }

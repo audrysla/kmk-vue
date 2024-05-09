@@ -1,20 +1,20 @@
-<template>
-  <div id="header">
-    <header>
+<template> 
+  <header>
+    <div class="inner">
       <h1><router-link to="/">Home</router-link></h1>
       <ul class="gnb">
-        <li :class="{ active: $route.path === '/sub1' }"><router-link to="/sub1">Sub1</router-link></li>
-        <li :class="{ active: $route.path === '/sub2' }"><router-link to="/sub2">Sub2</router-link></li>
-        <li :class="{ active: $route.path === '/sub3' }"><router-link to="/sub3">Sub3</router-link></li>
-        <li :class="{ active: $route.path === '/sub4' }"><router-link to="/sub4">Sub4</router-link></li>
-        <li :class="{ active: $route.path === '/sub5' }"><router-link to="/sub5">Sub5</router-link></li> 
+        <li :class="{ active: $route.path === '/sub1' }"><router-link to="/sub1">MENU1</router-link></li>
+        <li :class="{ active: $route.path === '/sub2' }"><router-link to="/sub2">MENU2</router-link></li>
+        <li :class="{ active: $route.path === '/sub3' }"><router-link to="/sub3">MENU3</router-link></li>
+        <li :class="{ active: $route.path === '/sub4' }"><router-link to="/sub4">MENU4</router-link></li>
+        <li :class="{ active: $route.path === '/sub5' }"><router-link to="/sub5">MENU5</router-link></li> 
       </ul>
       <div class="util">
         <a href="#">로그인</a>
         <a href="#">회원가입</a>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -33,9 +33,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-#header{
+header{    
   background-color: #907bf0;
-  header{
+  .inner{
     margin:0 auto;
     max-width:1280px;
     height:40px;

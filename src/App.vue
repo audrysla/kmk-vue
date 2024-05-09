@@ -1,7 +1,6 @@
 <template>
   <Header />
-  <div id="contents">
-    <Lnb />
+  <div id="contents">    
     <router-view class="routerView"/>
   </div>
   <Footer />
@@ -10,14 +9,12 @@
 <script>
 import './assets/scss/base.scss'
 import Header from './layout/Header.vue'
-import Lnb from './components/Lnb.vue'
 import Footer from './layout/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Lnb,
     Footer
   }
 }
@@ -36,16 +33,15 @@ export default {
   #contents{
     margin:0 auto;
     max-width:1280px;
-    display: flex;    
-    aside{
-      width:150px;
-      padding: 20px;
-    }
+    
     .routerView {
-      flex: 1;
-      padding: 20px;
+      display: flex;    
+      padding: 20px 0;
       min-height:500px;
       text-align:left;
+    }
+    aside{
+      width:150px;
     }
   }
 }
