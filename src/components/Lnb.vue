@@ -19,6 +19,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   aside{
+    width:150px;
     li{
       display: block;
       a{

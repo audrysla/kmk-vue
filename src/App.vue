@@ -29,6 +29,10 @@ export default {
   color: #2c3e50;
   h2{
     color:red;
+    margin-bottom:20px;
+  }
+  h3{
+    margin-bottom:20px;
   }
   #contents{
     margin:0 auto;
@@ -39,9 +43,6 @@ export default {
       padding: 20px 0;
       min-height:500px;
       text-align:left;
-    }
-    aside{
-      width:150px;
     }
   }
 }
