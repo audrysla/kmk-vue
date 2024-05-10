@@ -34,12 +34,13 @@ a {
   flex-direction: column;
   header .inner, #contents, footer .inner{
     margin:0 auto;
-    width:1280px;
+    max-width:1280px;
   }
   #contents{
     flex:1;
   }
   footer{
+    font-size:12px;
     .inner{
       height:40px;
     }
