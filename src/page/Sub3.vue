@@ -35,6 +35,7 @@ export default {
 
 <style lang="scss">
   #sub3{
+    justify-content: center;
     h3{
       margin:30px 0 15px;
     }

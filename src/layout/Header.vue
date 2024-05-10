@@ -36,9 +36,7 @@ export default {
 header{    
   background-color: #907bf0;
   .inner{
-    margin:0 auto;
-    max-width:1280px;
-    height:40px;
+    height:70px;
     display: flex;
     justify-content: space-between;
     align-items: center;

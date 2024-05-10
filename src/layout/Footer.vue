@@ -1,6 +1,8 @@
 <template>
   <footer>
-    푸터
+    <div class="inner">
+      ⓒ KMK Corp.
+    </div>
   </footer>
 </template>
 
@@ -21,8 +23,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   footer{
-    margin:0 auto;
-    max-width:1280px;
-    height:40px;
+    background:#444;
+    .inner{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:#fff;
+    }
   }
 </style>

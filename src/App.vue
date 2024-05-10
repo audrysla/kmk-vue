@@ -34,15 +34,11 @@ export default {
   h3{
     margin-bottom:20px;
   }
-  #contents{
-    margin:0 auto;
-    max-width:1280px;
-    
+  #contents{    
     .routerView {
       display: flex;    
       padding: 20px 0;
-      min-height:500px;
-      text-align:left;
+      text-align: left;
     }
   }
 }

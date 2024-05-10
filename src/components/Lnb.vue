@@ -1,11 +1,11 @@
 <template>
   <aside>
     <ul>
-      <li><a href="#">sub1</a></li>
-      <li><a href="#">sub2</a></li>
-      <li><a href="#">sub3</a></li>
-      <li><a href="#">sub4</a></li>
-      <li><a href="#">sub5</a></li>
+      <li><router-link to="/sub1">sub1</router-link></li>
+      <li><router-link to="/sub1">sub2</router-link></li>
+      <li><router-link to="/sub1">sub3</router-link></li>
+      <li><router-link to="/sub1">sub4</router-link></li>
+      <li><router-link to="/sub1">sub5</router-link></li>
     </ul>
   </aside>
 </template>

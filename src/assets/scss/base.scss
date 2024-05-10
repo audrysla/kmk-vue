@@ -3,6 +3,9 @@ $primary-color: #f5f2ff;
 
 
 *{margin:0; padding:0}
+html, body{
+  height: 100%;
+}
 body {
   background-color: $primary-color;
 }
@@ -26,8 +29,19 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  #wrap{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  header .inner, #contents, footer .inner{
     margin:0 auto;
-    max-width: 1280px;
+    width:1280px;
+  }
+  #contents{
+    flex:1;
+  }
+  footer{
+    .inner{
+      height:40px;
+    }
   }
 }
