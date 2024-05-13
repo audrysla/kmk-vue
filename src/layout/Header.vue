@@ -1,14 +1,19 @@
 <template> 
   <header>
     <div class="inner">
-      <h1><router-link to="/">Home</router-link></h1>
-      <ul class="gnb">
-        <li :class="{ active: $route.path === '/sub1' }"><router-link to="/sub1">MENU1</router-link></li>
-        <li :class="{ active: $route.path === '/sub2' }"><router-link to="/sub2">MENU2</router-link></li>
-        <li :class="{ active: $route.path === '/sub3' }"><router-link to="/sub3">MENU3</router-link></li>
-        <li :class="{ active: $route.path === '/sub4' }"><router-link to="/sub4">MENU4</router-link></li>
-        <li :class="{ active: $route.path === '/sub5' }"><router-link to="/sub5">MENU5</router-link></li> 
-      </ul>
+      <div class="all_menu">
+        <button><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <div class="h_center">
+        <h1><router-link to="/">Home</router-link></h1>
+        <ul class="gnb">
+          <li :class="{ active: $route.path === '/sub1' }"><router-link to="/sub1">MENU1</router-link></li>
+          <li :class="{ active: $route.path === '/sub2' }"><router-link to="/sub2">MENU2</router-link></li>
+          <li :class="{ active: $route.path === '/sub3' }"><router-link to="/sub3">MENU3</router-link></li>
+          <li :class="{ active: $route.path === '/sub4' }"><router-link to="/sub4">MENU4</router-link></li>
+          <li :class="{ active: $route.path === '/sub5' }"><router-link to="/sub5">MENU5</router-link></li> 
+        </ul>
+      </div>
       <div class="util">
         <a href="#">로그인</a>
         <a href="#">회원가입</a>
@@ -41,6 +46,17 @@ header{
     justify-content: space-between;
     align-items: center;
     color:#fff;
+    .all_menu{
+      width:100px;
+      text-align: left;
+      button{
+        color:inherit;
+        font-size:18px;
+      }
+    }
+    .h_center{
+      display: flex;
+    }    
     h1{
       font-size:18px;
       a{
