@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      testData: TestData, // TestData를 데이터로 설정하여 자식 컴포넌트로 전달
+      testData: TestData.testData, // TestData를 데이터로 설정하여 자식 컴포넌트로 전달
       tabName : 'Title'
     };
   },

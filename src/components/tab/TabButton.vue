@@ -15,7 +15,7 @@ export default {
   name: 'TabButton',
   data(){
     return{
-      testData: TestData,
+      testData: TestData.testData,
       tabActive : 0
     }
   },

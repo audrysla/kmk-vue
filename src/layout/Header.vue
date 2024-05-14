@@ -2,7 +2,17 @@
   <header>
     <div class="inner">
       <div class="all_menu">
-        <button><i class="fa-solid fa-bars"></i></button>
+        <button @click="toggleVisibility"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu_box" v-show="allMenuOpen">
+          <ul>
+            <li v-for="(item, index) in testData" :key="index">
+              <a href="#"  @mouseenter="subMenuShow(index)" @mouseleave="subMenuHide(index)">{{item.cate}}</a>
+              <ul v-show="subMenuOpen === index">
+                <li v-for="(subItem, i) in item.sub" :key="i">{{subItem}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
       <div class="h_center">
         <h1><router-link to="/">Home</router-link></h1>
@@ -23,6 +33,7 @@
 </template>
 
 <script>
+import TestData from '@/assets/testData.js';
 export default {
   name: 'HeaderPage',
   props: {
@@ -30,7 +41,20 @@ export default {
   },
   data() {
     return{
-
+      allMenuOpen : false,
+      subMenuOpen : false,
+      testData: TestData.category,
+    }
+  },
+  methods: {
+    toggleVisibility() {
+      this.allMenuOpen = !this.allMenuOpen;
+    },
+    subMenuShow(index){
+      this.subMenuOpen = index;
+    },
+    subMenuHide(){
+      this.subMenuOpen = null;
     }
   }
 }
@@ -47,11 +71,36 @@ header{
     align-items: center;
     color:#fff;
     .all_menu{
-      width:100px;
       text-align: left;
       button{
         color:inherit;
         font-size:18px;
+      }
+    }
+    .menu_box{
+      width:180px;
+      position:absolute;
+      background:#fff;
+      color:#333;
+      letter-spacing: -.5px;
+      ul{        
+        padding:15px;
+        li{        
+          
+          display: flex;
+          height:32px; 
+          a{
+            display:block;
+            width: 100%;
+          }
+          ul{
+            position:absolute;
+            left:160px;
+            top:0;
+            width:150px;
+            background: #fff;
+          }
+        }
       }
     }
     .h_center{

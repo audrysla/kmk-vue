@@ -36,7 +36,7 @@ export default {
   }
   #contents{    
     .routerView {
-      display: flex;    
+      display: flex;
       padding: 20px 0;
       text-align: left;
     }
