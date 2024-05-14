@@ -82,6 +82,7 @@ header{
       }
     }
     .menu_box{
+      z-index: 1000;
       width:180px;
       position:absolute;
       background:#fff;
