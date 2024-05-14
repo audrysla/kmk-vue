@@ -2,11 +2,11 @@
   <header>
     <div class="inner">
       <div class="all_menu">
-        <button @click="toggleVisibility"><i class="fa-solid fa-bars"></i></button>
-        <div class="menu_box" v-show="allMenuOpen">
+        <button @click="allMenuShow"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu_box" v-show="allMenuOpen" @mouseleave="allMenuHide" >
           <ul>
             <li v-for="(item, index) in testData" :key="index">
-              <a href="#"  @mouseenter="subMenuShow(index)" @mouseleave="subMenuHide(index)">{{item.cate}}</a>
+              <a href="#"  @mouseenter="subMenuShow(index)">{{item.cate}}</a>
               <ul v-show="subMenuOpen === index">
                 <li v-for="(subItem, i) in item.sub" :key="i">{{subItem}}</li>
               </ul>
@@ -47,13 +47,17 @@ export default {
     }
   },
   methods: {
-    toggleVisibility() {
+    allMenuShow() {
       this.allMenuOpen = !this.allMenuOpen;
     },
     subMenuShow(index){
       this.subMenuOpen = index;
     },
     subMenuHide(){
+      this.subMenuOpen = null;
+    },
+    allMenuHide() {
+      this.allMenuOpen = false;
       this.subMenuOpen = null;
     }
   }
@@ -85,6 +89,7 @@ header{
       letter-spacing: -.5px;
       ul{        
         padding:15px;
+        border:1px solid #ddd;
         li{        
           
           display: flex;
@@ -97,7 +102,7 @@ header{
             position:absolute;
             left:160px;
             top:0;
-            width:150px;
+            width:180px;
             background: #fff;
           }
         }
