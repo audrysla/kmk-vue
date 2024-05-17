@@ -56,6 +56,11 @@ a {
       padding:0 15px;
       padding-bottom: 30px;
       height:40px;
+      .all_menu{
+        button{
+          font-size:18px;
+        }
+      }
     }
     header .inner .gnb li.active a{
       background:transparent;

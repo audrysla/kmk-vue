@@ -78,30 +78,43 @@ header{
       text-align: left;
       button{
         color:inherit;
-        font-size:18px;
+        font-size:20px;
       }
     }
     .menu_box{
       z-index: 1000;
       width:180px;
       position:absolute;
+      top:70px;
       background:#fff;
       color:#333;
-      letter-spacing: -.5px;
-      ul{        
+      letter-spacing: -1px;
+      ul{
         padding:15px;
-        border:1px solid #ddd;
-        li{        
-          
+        border:1px solid #dfdfdf;
+        border-top:0;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
+        li{
           display: flex;
           height:32px; 
           a{
-            display:block;
+            display: flex;
             width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            &:hover{
+              font-weight: bold;
+              &:after{
+                content:'\f105';
+                font-family: "Font Awesome 6 free";
+                font-weight: 900;
+                margin-bottom: -1px;
+              }
+            }
           }
           ul{
             position:absolute;
-            left:160px;
+            left:179px;
             top:0;
             width:180px;
             background: #fff;
