@@ -6,9 +6,9 @@
         <div class="menu_box" v-show="allMenuOpen" @mouseleave="allMenuHide" >
           <ul>
             <li v-for="(item, index) in testData" :key="index">
-              <a href="#"  @mouseenter="subMenuShow(index)">{{item.cate}}</a>
+              <a href="#" @mouseenter="subMenuShow(index)">{{item.cate}}</a>
               <ul v-show="subMenuOpen === index">
-                <li v-for="(subItem, i) in item.sub" :key="i">{{subItem}}</li>
+                <li v-for="(subItem, i) in item.sub" :key="i"><a href="#">{{subItem}}</a></li>
               </ul>
             </li>
           </ul>
@@ -89,9 +89,22 @@ header{
       background:#fff;
       color:#333;
       letter-spacing: -1px;
+      > ul > li > a{
+        &:hover{
+          color:#907bf0;
+          font-weight: bold;
+          &:after{
+            content:'\f105';
+            font-family: "Font Awesome 6 free";
+            font-weight: 900;
+            margin-bottom: -1px;
+            color:inherit;
+          }
+        }
+      }
       ul{
         padding:15px;
-        border:1px solid #dfdfdf;
+        border:1px solid #907bf0;
         border-top:0;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, .1);
         li{
@@ -101,16 +114,7 @@ header{
             display: flex;
             width: 100%;
             justify-content: space-between;
-            align-items: center;
-            &:hover{
-              font-weight: bold;
-              &:after{
-                content:'\f105';
-                font-family: "Font Awesome 6 free";
-                font-weight: 900;
-                margin-bottom: -1px;
-              }
-            }
+            align-items: center;            
           }
           ul{
             position:absolute;
@@ -118,6 +122,10 @@ header{
             top:0;
             width:180px;
             background: #fff;
+            > li > a:hover{
+              color:#907bf0;
+              font-weight:bold;
+            }
           }
         }
       }
