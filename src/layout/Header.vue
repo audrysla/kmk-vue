@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="all_menu">
         <button @click="allMenuShow"><i class="fa-solid fa-bars"></i></button>
-        <div class="menu_box" v-show="allMenuOpen" @mouseleave="allMenuHide" >
+        <div class="menu_box" v-if="allMenuOpen" @mouseleave="allMenuHide" >
           <ul>
             <li v-for="(item, index) in testData" :key="index">
               <a href="#" @mouseenter="subMenuShow(index)">{{item.cate}}</a>
