@@ -7,7 +7,7 @@
           <ul>
             <li v-for="(item, index) in testData" :key="index">
               <a href="#" @mouseenter="subMenuShow(index)">{{item.cate}}</a>
-              <ul v-show="subMenuOpen === index">
+              <ul v-if="subMenuOpen === index">
                 <li v-for="(subItem, i) in item.sub" :key="i"><a href="#">{{subItem}}</a></li>
               </ul>
             </li>
@@ -89,8 +89,8 @@ header{
       background:#fff;
       color:#333;
       letter-spacing: -1px;
-      > ul > li > a{
-        &:hover{
+      > ul > li{
+        &:hover > a{
           color:#907bf0;
           font-weight: bold;
           &:after{
@@ -114,7 +114,7 @@ header{
             display: flex;
             width: 100%;
             justify-content: space-between;
-            align-items: center;            
+            align-items: center;
           }
           ul{
             position:absolute;
