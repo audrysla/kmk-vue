@@ -2,11 +2,11 @@
   <header>
     <div class="inner">
       <div class="all_menu">
-        <button @focus="allMenuShow"><i class="fa-solid fa-bars"></i></button>
+        <button @click="allMenuShow"><i class="fa-solid fa-bars"></i></button>
         <div class="menu_box" v-if="allMenuOpen" @mouseleave="allMenuHide" >
           <ul>
             <li v-for="(item, index) in testData" :key="index">
-              <a href="#" @mouseenter="subMenuShow(index)" @focus="subMenuShow(index)">{{item.cate}}</a>
+              <a href="#" @mouseenter="subMenuShow(index)">{{item.cate}}</a>
               <ul v-if="subMenuOpen === index">
                 <li v-for="(subItem, i) in item.sub" :key="i"><a href="#">{{subItem}}</a></li>
               </ul>
