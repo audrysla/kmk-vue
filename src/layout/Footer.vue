@@ -30,7 +30,7 @@ export default {
       startY:0,
       lastY:0,
       dragGap:0,
-      moveGAp:20,
+      moveGap:20,
       distance:0
     }
   },
@@ -47,7 +47,7 @@ export default {
     onTouchMove(e){
       const Panel = document.querySelector(".drag-panel")
       this.lastY = e.touches[0].clientY;
-      Panel.style.top = `${this.lastY - this.dragGap}px`      
+      Panel.style.top = `${this.lastY - this.dragGap}px`
       document.querySelector(".console").textContent = this.startY - this.lastY
     },
     onTouchEnd(e){
@@ -56,12 +56,12 @@ export default {
       const DragContH = document.querySelector(".drag-cont").getBoundingClientRect().height;
       this.distance = this.startY - this.lastY;
       Panel.style.transition = `top 0.1s ease-in-out`;
-      if(this.distance != this.startY){        
-        if(this.distance > this.moveGAp){
+      if(this.distance != this.startY){
+        if(this.distance > this.moveGap){
           console.log("dist", this.distance, "up")
           Panel.style.top = `calc(100% - ${DragContH+DragHandleH+40}px)`
         }
-        if(this.distance < -this.moveGAp){
+        if(this.distance < -this.moveGap){
           console.log("dist", this.distance,"down")
           Panel.style.top = `calc(100% - 100px)`
         }
@@ -75,7 +75,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .console{position: fixed;z-index: 10;bottom:0;width:100%;text-align: right;}
-body{overflow: hidden;}
+
   
   .drag-panel {
     position: fixed;
