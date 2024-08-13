@@ -1,5 +1,6 @@
 <template>
-  <footer>    
+  <footer>
+  <!-- <div class="bg"></div> -->
     <div class="drag-panel">
       <span class="drag-handle" 
         @touchstart="onTouchStart" 
@@ -38,6 +39,7 @@ export default {
   },
   methods:{
     onTouchStart(e){
+      // e.preventDefault();
       document.querySelector("body").classList.add('fixed');
       const Panel = document.querySelector(".drag-panel")
       this.startY = e.touches[0].clientY;
@@ -46,12 +48,14 @@ export default {
       // console.log("START",this.startY)
     },
     onTouchMove(e){
+      e.preventDefault();
       const Panel = document.querySelector(".drag-panel")
       this.lastY = e.touches[0].clientY;
       Panel.style.top = `${this.lastY - this.dragGap}px`
       document.querySelector(".console").textContent = this.startY - this.lastY
     },
     onTouchEnd(e){
+      // e.preventDefault();
       const Panel = document.querySelector(".drag-panel");
       const DragHandleH = document.querySelector(".drag-handle").getBoundingClientRect().height;
       const DragContH = document.querySelector(".drag-cont").getBoundingClientRect().height;
@@ -68,7 +72,9 @@ export default {
         }
       }
       console.log("END", DragContH)
-      document.querySelector("body").classList.remove('fixed');
+      Panel.ontransitionend = () => {
+        document.querySelector("body").classList.remove('fixed');
+      };
     }
   }
 }
@@ -77,9 +83,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .console{position: fixed;z-index: 10;bottom:0;width:100%;text-align: right;}
-body.fixed{overflow: hidden;}
+body.fixed{overflow: hidden;height:100%;border:10px solid}
   
   .drag-panel {
+    -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+
     position: fixed;
     top:calc(100% - 100px);
     bottom: 0;
@@ -91,6 +102,7 @@ body.fixed{overflow: hidden;}
     
     /* transform: translateY(calc(100% - 20px)); 핸들의 높이만큼만 보이게 설정 */
   }
+  .bg{overflow:hidden;position: fixed;top:0;right:0;left:0;bottom:0;background-color: rgba(0,0,0,.3);}
   .drag-panel.up{
     top:400px;
   }
