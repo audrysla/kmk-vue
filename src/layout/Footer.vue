@@ -38,6 +38,7 @@ export default {
   },
   methods:{
     onTouchStart(e){
+      document.querySelector("body").classList.add('fixed');
       const Panel = document.querySelector(".drag-panel")
       this.startY = e.touches[0].clientY;
       this.dragGap = this.startY - Panel.getBoundingClientRect().top;
@@ -67,6 +68,7 @@ export default {
         }
       }
       console.log("END", DragContH)
+      document.querySelector("body").classList.remove('fixed');
     }
   }
 }
@@ -75,7 +77,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .console{position: fixed;z-index: 10;bottom:0;width:100%;text-align: right;}
-
+body.fixed{overflow: hidden;}
   
   .drag-panel {
     position: fixed;
