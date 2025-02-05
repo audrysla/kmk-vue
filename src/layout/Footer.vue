@@ -1,18 +1,21 @@
 <template>
   <footer>
   <!-- <div class="bg"></div> -->
-    <div class="drag-panel">
-      <span class="drag-handle" 
-        @touchstart="onTouchStart" 
-        @touchmove="onTouchMove" 
-        @touchend="onTouchEnd"
-      ></span>
+    <div class="drag-panel"
+      @touchstart="onTouchStart" 
+      @touchmove="onTouchMove" 
+      @touchend="onTouchEnd"
+    >
+      <span class="drag-handle"></span>
       <div class="drag-cont">
         드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>
         드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>
       </div>
     </div>
-    <div class="inner">
+    <div 
+      v-if="false"
+      class="inner"
+    >
       ⓒ KMK Corp.
     </div>
   </footer>
@@ -64,11 +67,11 @@ export default {
       if(this.distance != this.startY){
         if(this.distance > this.moveGap){
           console.log("dist", this.distance, "up")
-          Panel.style.top = `calc(100% - ${DragContH+DragHandleH+40}px)`
+          Panel.style.top = `calc(100% - ${DragContH+DragHandleH}px)`
         }
         if(this.distance < -this.moveGap){
           console.log("dist", this.distance,"down")
-          Panel.style.top = `calc(100% - 100px)`
+          Panel.style.top = `calc(100% - 40px)`
         }
       }
       console.log("END", DragContH)
@@ -92,7 +95,7 @@ body.fixed{overflow: hidden;height:100%;border:10px solid}
   user-select:none;
 
     position: fixed;
-    top:calc(100% - 100px);
+    top:calc(100% - 40px);
     bottom: 0;
     left: 0;
     right: 0;
