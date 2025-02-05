@@ -8,6 +8,7 @@
     >
       <span class="drag-handle"></span>
       <div class="drag-cont">
+        바텀시트 프로토타입<br>
         드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>
         드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>드래그 내용<br>
       </div>
